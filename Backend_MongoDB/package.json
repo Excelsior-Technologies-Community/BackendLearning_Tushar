@@ -1,8 +1,8 @@
 {
-  "name": "backend_concepts",
+  "name": "backend_mongodb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +12,11 @@
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
+    "ejs": "^5.0.1",
     "express": "^5.2.1",
     "mongodb": "^7.1.1",
     "mongoose": "^9.4.1",
+    "node": "^25.9.0",
     "nodemon": "^3.1.14"
   }
 }

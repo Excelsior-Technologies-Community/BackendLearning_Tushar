@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Form</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Form Card */
+    .form-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .form-card input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .form-card input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .form-card button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .form-card button:hover {
+      background: #0056b3;
+    }
+
+    /* Users List */
+    .users {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .user-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .user-card span {
+      color: #555;
+    }
+
+    .email {
+      font-size: 14px;
+      color: #888;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2> Data Store Task</h2>
+
+  <!-- Form -->
+  <div class="form-card">
+    <form action="/submit" method="POST">
+      <input type="text" name="name" placeholder="Enter Name" required>
+      <input type="email" name="email" placeholder="Enter Email" required>
+      <button type="submit">Add User</button>
+    </form>
+  </div>
+
+  <!-- Users List -->
+  <div class="users">
+    <% users.forEach(user => { %>
+      <div class="user-card">
+        <div>
+          <strong><%= user.name %></strong><br>
+          <span class="email"><%= user.email %></span>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+</div>
+
+</body>
+</html>
